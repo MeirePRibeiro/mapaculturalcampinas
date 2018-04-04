@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Pontos Culturais Campinas</title>
+			 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+   	 <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+   integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+   crossorigin="">
+   </script>
+   			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   			<!--
+   			<link rel="stylesheet" href="css/leaflet.css"/>
+   			<script src="js/leaflet.js"/>
+   			-->
+   			
+		</head>
+		<style>
+			#mapacultural { height: 600px; width: 1200px;}
+			footer .copyright {
+		        font-size: 11px;
+		        text-align: center;
+		        color: #FFFFFF;
+		        background-color: #BC1216;
+		        padding: 10px 0;
+		        font-weight: 600;
+    		}
+		</style>
+
+		<body>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">	
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#">
+			        <img alt="Mapa Cultural Campinas" src="images/culture.jpg"/>
+			      </a>Mapa Cultural Campinas
+				</div>
+		      	<ul class="nav navbar-nav navbar-right">
+		      			<li><a href="projetoautores.html">Projeto e Autores</a></li>
+		        		<li class="active"><a href="faleconosco.html">Fale Conosco</a></li>
+		      	</ul>
+      	   </div>
+		</nav>
+		 
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+   		
+
+		<div id="mapacultural"></div>
+		<script>
+			var map = L.map('mapacultural').setView([-22.911201, -47.061245], 13);
+
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			}).addTo(map);
+
+			L.marker([-22.903404, -47.074847]).addTo(map)
+	    		.bindPopup('<b><a href="https://www.sescsp.org.br/unidades/16_CAMPINAS/" target="_blank"/>Sesc Campinas</b><br>Mantido pelos empresários do comércio de bens, turismo e serviços, o Serviço Social do Comércio - Sesc - é uma entidade privada que tem como objetivo proporcionar o bem-estar e qualidade de vida aos trabalhadores deste setor e sua família.')
+	    		.openPopup();
+
+	    	L.marker([-22.914838, -47.068139]).addTo(map)
+	    		.bindPopup('<b><a href="http://www.sesisp.org.br/cultura/espetaculo/?u=34" target="_blank"/>Teatro Sesi Campinas</b><br>Ótimo teatro, bom ambiente e sempre gratuito.');
+
+	    	L.marker([-22.908581, -47.066754]).addTo(map)
+	    		.bindPopup('<b><a href="http://pt-br.facebook.com/estacaocultura" target="_blank"/>Estação Cultura</b><br>Espaço com mostras e eventos culturais em prédio centenário imponente que foi grande terminal ferroviário.');	
+
+	    	L.marker([-22.910984, -47.065107]).addTo(map)
+	    		.bindPopup('<b><a href="http://www.campinas.sp.gov.br/governo/cultura/teatros-auditorios/jose-castro-mendes.php" target="_blank"/>Teatro Castro Mendes</b><br>O Teatro Municipal "José de Castro Mendes", mas conhecido como Teatro Castro Mendes, é atualmente o maior e principal teatro público da cidade de Campinas, no interior do estado de São Paulo, Brasil. Localizado na Vila Industrial');	
+
+	    	L.marker([])
+
+		</script>
+		<footer>
+			<div class="copyright">
+	            <small>
+	                Copyright 2018 © Todos os direitos reservados.<br>
+	                O conteúdo do site não pode ser editado, copiado ou distribuído sem expressa autorização de Meire Ribeiro.
+	            </small>
+	        </div>
+	    </footer>
+   		</body>
+</html>
